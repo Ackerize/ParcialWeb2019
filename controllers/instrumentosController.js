@@ -4,11 +4,11 @@ var debug = require('debug')('parcialweb:instrumentos_controller');
 module.exports.getOne = (req, res, next) => {
     debug('Buscando instrumento', req.params);
     Instrumento.findOne({
-        nombre: req.params.nombre
+        _id: req.params.id
     })
     .then((foundInstrument) => {
         if(foundInstrument)
-            return res.s
+            return res.status(200).json(foundInstrument)
         else
             return res.status(400).json(null)
     })
@@ -31,9 +31,7 @@ module.exports.getAll = (req, res, next) => {
         .skip(perPage * page)
         .sort({ [sortProperty]: sort})
         .then((instrumentos) => {
-            return res.render('index', {
-                ins: instrumentos
-            })
+            return res.status(200).json(instrumentos)
         }).catch(err => {
             next(err)
         })
@@ -49,7 +47,7 @@ module.exports.register = (req, res, next) => {
     .then((foundInstrument) => {
         if(foundInstrument){
             debug("Instrumento duplicado");
-            throw new Error(`Instrumento duplicado ${req.body.nombre}`);
+            return res.status(500).json({ok: false})
         }else{
             let newInstrument = new Instrumento({
                 nombre: req.body.nombre,
@@ -61,10 +59,15 @@ module.exports.register = (req, res, next) => {
         }
     }).then(instrument => {
         return res
-            .header('Location', '/instrumentos/' + instrument._id)
+            .header('Location', '/instrumentos/')
             .status(201)
             .json({
-                ins: instrument
+                _id: instrument._id,
+                nombre: instrument.nombre,
+                tipo: instrument.tipo,
+                marca: instrument.marca,
+                precio: instrument.precio,
+                ok: true
             });
     }).catch(err => {
         next(err);
@@ -87,9 +90,16 @@ module.exports.update = (req, res, next) => {
     })
     .then((updated) => {
         if(updated)
-            return res.status(200).json(updated);
+            return res.status(200).json({
+                _id: updated._id,
+                nombre: updated.nombre,
+                tipo: updated.tipo,
+                marca: updated.marca,
+                precio: updated.precio,
+                ok: true
+            });
         else
-            return res.status(400).json(null);
+            return res.status(400).json({ok: false});
     }).catch(err => {
         next(err);
     });

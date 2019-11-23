@@ -9,7 +9,7 @@ const InstrumentosSchema = Schema({
     },
     tipo: {
         type: String,
-        enum: ['cuerda', 'viento', 'percusion', 'electricos']
+        enum: ['cuerda', 'viento', 'percusion', 'electrico']
     },
     marca: {
         type: String,
