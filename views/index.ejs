@@ -1,0 +1,69 @@
+<% include partials/header %>
+
+<div class="container">
+  <div class="row">
+    <!-- FORM -->
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <form action="/instrumentos" method="POST" name="formInstrumentos">
+            <div class="form-group">
+              <input
+                type="text"
+                name="nombre"
+                placeholder="Inserte el nombre"
+                class="form-control"
+              />
+            </div>
+            <div class= "form-group">
+              <select name="tipo" id="tipo_instrumento" class="form-control">
+                <option>cuerda</option>
+                <option>percusion</option>
+                <option>viento</option>
+                <option>electrico</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="marca"
+                placeholder="Inserte la marca"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="number"
+                name="precio"
+                placeholder="Inserte el precio"
+                class="form-control"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Enviar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- LIST -->
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>N</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>
