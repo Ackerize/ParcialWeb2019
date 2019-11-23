@@ -55,14 +55,14 @@ function onload(){
         data.forEach(element => {
             filas = filas + `
             <tr>
-                <td>${i}</td>
+                <th scope="row">${i}</th>
                 <td>${element.nombre}</td>
                 <td>${element.tipo}</td>
                 <td>${element.marca}</td>
                 <td>${element.precio}</td>
                 <td>
-                    <a href="/instrumentos/${element.nombre}" class="update"><i class="fas fa-pen fa-fw"></i> Editar </a>
-                    <a href="/instrumentos/${element.nombre}" class="delete"><i class="fas fa-eraser fa-fw"></i> Eliminar </a>
+                    <a href="/instrumentos/${element.nombre}" class="update"><i class="fas fa-pen fa-fw"></i>Editar</a>
+                    <a href="/instrumentos/${element.nombre}" class="delete"><i class="fas fa-eraser fa-fw"></i>Borrar</a>
                 </td>
             </tr>
             `

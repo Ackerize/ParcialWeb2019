@@ -1,8 +1,48 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.update{
+    padding-right: 1.5em;
 }
+@media (min-width: 360px) {
+    .update, .delete{
+        font-size: 0.8em;
+    }
+    .botones{
+        display: flex;
+    }
+    #btn_add{
+        margin: 1em auto;
+    }
+    .card{
+        margin-bottom: 3em;
+    }
+    
+  }
+  @media (min-width: 768px) {
+    .update, .delete{
+        font-size: 0.8em;
+    }
+    .botones{
+        display: grid;
+    }
+    #btn_add, #btn_limpiar{
+        width: 150%;
+        margin: 0.5em -1em;
+    }
 
-a {
-  color: #00B7FF;
+  }
+  h1{
+      margin-top: 1.5em;
+      margin-bottom: 1.5em; 
+    }
+@media (min-width: 1024px) {
+    .card{
+        margin-right: 4em;
+    }
+    .botones{
+        display: flex;
+    }
+    #btn_add, #btn_limpiar{
+        width: 120%;
+        margin: 0.5em -1em;
+    }
+
 }

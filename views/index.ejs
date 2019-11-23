@@ -1,6 +1,7 @@
 <% include partials/header %>
 
 <div class="container">
+  <h1 class="text-center">Administracion de instrumentos musicales</h1>
   <div class="row">
     <!-- FORM -->
     <div class="col-md-5">
@@ -50,9 +51,9 @@
                 required
               />
             </div>
-            <div class="row ">
+            <div class="row botones">
               <div class = "col-md-5 mx-auto">
-                <button type="submit" class="btn btn-primary btn-block">
+                <button type="submit" class="btn btn-primary btn-block" id="btn_add">
                   Agregar
                 </button>
               </div>
@@ -67,7 +68,7 @@
       </div>
     </div>
     <!-- LIST -->
-    <div class="col-md-7">
+    <div class="table-responsive col-md-7">
       <table class="table table-striped">
         <thead>
           <tr>
