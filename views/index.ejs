@@ -8,14 +8,18 @@
         <div class="card-body">
           <form action="/instrumentos" method="POST" name="formInstrumentos">
             <div class="form-group">
+              <label for="name_nombre">Nombre del instrumento: </label>
               <input
                 type="text"
                 name="nombre"
                 placeholder="Inserte el nombre"
                 class="form-control"
+                pattern="[a-zA-Z\s]*$"
+                title="Solo letras"
               />
             </div>
             <div class= "form-group">
+              <label for="name_tipo">Tipo del instrumento: </label>
               <select name="tipo" id="tipo_instrumento" class="form-control">
                 <option>cuerda</option>
                 <option>percusion</option>
@@ -24,14 +28,18 @@
               </select>
             </div>
             <div class="form-group">
+              <label for="name_tipo">Marca del instrumento: </label>
               <input
                 type="text"
                 name="marca"
                 placeholder="Inserte la marca"
                 class="form-control"
+                pattern="[a-zA-Z\s]*$"
+                title="Solo letras"
               />
             </div>
             <div class="form-group">
+              <label for="name_tipo">Precio del instrumento: </label>
               <input
                 type="number"
                 name="precio"
@@ -46,8 +54,8 @@
                 </button>
               </div>
               <div class = "col-md-5">
-                <a href="#" class="btn btn-primary btn-block" id="btn_buscar">
-                  Buscar
+                <a href="#" class="btn btn-primary btn-block" id="btn_limpiar">
+                  Limpiar
                 </a>
               </div>
             </div>
@@ -57,7 +65,7 @@
     </div>
     <!-- LIST -->
     <div class="col-md-7">
-      <table class="table table-bordered table-hover">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th>N</th>
