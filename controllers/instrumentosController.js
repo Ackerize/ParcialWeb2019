@@ -1,6 +1,6 @@
 var Instrumento = require('../models/instrumentos');
 var debug = require('debug')('parcialweb:instrumentos_controller');
-let regexLetras = new RegExp('^[a-zA-Z]+$')
+let regexLetras = new RegExp('^[a-zA-Z]*$')
 let regexNumeros = new RegExp('^[0-9]*$')
 let arrSort = ['asc', 'desc']
 let arrSortBy = ['createdAt', 'updatedAt', 'nombre', 'tipo', 'marca', 'precio']

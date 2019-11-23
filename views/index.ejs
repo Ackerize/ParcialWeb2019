@@ -15,7 +15,7 @@
                 name="nombre"
                 placeholder="Inserte el nombre"
                 class="form-control"
-                pattern="[a-zA-Z\s]*$"
+                pattern="^[a-zA-Z_]*$"
                 title="Solo letras"
                 required
               />
@@ -36,7 +36,7 @@
                 name="marca"
                 placeholder="Inserte la marca"
                 class="form-control"
-                pattern="[a-zA-Z\s]*$"
+                pattern="^[a-zA-Z_]*$"
                 title="Solo letras"
                 required
               />
@@ -59,7 +59,7 @@
               </div>
               <div class = "col-md-5 mx-auto">
                 <a href="#" class="btn btn-primary btn-block" id="btn_limpiar">
-                  Limpiar
+                  Cancelar
                 </a>
               </div>
             </div>
@@ -68,7 +68,10 @@
       </div>
     </div>
     <!-- LIST -->
+
     <div class="table-responsive col-md-7">
+      <a href="" class="recargar" id="recargar"><i class="fas fa-sync-alt"></i>Recargar</a>
+      <br><br>
       <table class="table table-striped">
         <thead>
           <tr>

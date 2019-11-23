@@ -2,6 +2,7 @@ onload();
 
 var form = (document.forms.formInstrumentos);
 var btn_clean = document.getElementById("btn_limpiar")
+var btn_recargar = document.getElementById("recargar")
 
 
 btn_clean.addEventListener("click", (e)=>{
@@ -10,6 +11,11 @@ btn_clean.addEventListener("click", (e)=>{
     form.tipo.value = "cuerda"
     form.marca.value = ""
     form.precio.value = ""
+})
+btn_recargar.addEventListener("click", (e)=>{
+    event.preventDefault();
+    btn_clean.click();
+    onload();
 })
 
 form.addEventListener('submit', function(event){
